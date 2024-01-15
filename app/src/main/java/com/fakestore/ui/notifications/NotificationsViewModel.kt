@@ -13,6 +13,7 @@ class NotificationsViewModel : ViewModel() {
         viewModelScope.launch {
 
             notificationsString.postValue(getNotifications())
+
             // дернуть юзкейс
         }
     }
@@ -20,5 +21,6 @@ class NotificationsViewModel : ViewModel() {
     private fun getNotifications(): String {
         return "This is notifications Fragment"
     }
+
 
 }
