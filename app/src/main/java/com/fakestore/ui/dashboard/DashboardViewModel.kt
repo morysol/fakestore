@@ -1,13 +1,25 @@
 package com.fakestore.ui.dashboard
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
 class DashboardViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+
+    val dashboardString = MutableLiveData<String>()
+
+    init {
+        viewModelScope.launch {
+
+            dashboardString.postValue(getDashboard())
+            // дернуть юзкейс
+        }
     }
-    val text: LiveData<String> = _text
+
+    private fun getDashboard(): String {
+        return "This is dashboard Fragment"
+    }
+
 }
