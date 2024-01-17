@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.fakestore.databinding.FragmentHomeBinding
+import com.fakestore.domain.CategoriesUseCase
 import com.fakestore.domain.ProductUseCase
 import kotlinx.coroutines.launch
 
@@ -23,6 +24,7 @@ class HomeFragment : Fragment() {
             val response = ProductUseCase.getProduct()
             Log.d("response", Calendar.getInstance().time.toString())
             Log.d("response", response.toString())
+            val categories = CategoriesUseCase.getCategories()
         }
     }
 

@@ -12,7 +12,7 @@ object ProductUseCase {
         // val retrofit = repo.getInstance()
         //  val apiInterface = retrofit.create(FakestoreApiInterface::class.java)
 
-        val productFromRepo = repo.fakestoreApi.getTestResponse("14")
+        val productFromRepo = repo.fakestoreApi.getProduct("14")
         // val productFromRepo = apiInterface.getTestResponse("14")
         //  val productFromRepo = repo.getTestResponse("14")
         return convertProduct(productFromRepo)
