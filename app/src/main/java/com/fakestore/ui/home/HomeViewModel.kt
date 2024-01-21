@@ -1,13 +1,26 @@
 package com.fakestore.ui.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    val homeString = MutableLiveData<String>()
+
+    init {
+        viewModelScope.launch {
+
+            homeString.postValue(getNotifications())
+
+            // дернуть юзкейс
+        }
     }
-    val text: LiveData<String> = _text
+
+    private fun getNotifications(): String {
+        return "This is notifications Fragment"
+    }
+
+
 }
