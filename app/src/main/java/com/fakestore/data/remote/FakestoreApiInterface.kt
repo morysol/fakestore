@@ -1,6 +1,5 @@
 package com.fakestore.data.remote
 
-import com.fakestore.data.remote.model.ResponseAllProducts
 import com.fakestore.data.remote.model.ResponseProduct
 import retrofit2.Response
 import retrofit2.http.GET
@@ -9,8 +8,8 @@ import retrofit2.http.Path
 //  TODO params
 interface FakestoreApiInterface {
 
-    @GET("/products")
-    suspend fun getAllProducts(): Response<ResponseAllProducts>
+    // @GET("/products")
+    // suspend fun getAllProducts(): Response<ResponseAllProducts>
 
     // @GET("/products/5")
     // suspend fun getTestResponse(): Response<ResponseProduct>
@@ -28,6 +27,6 @@ interface FakestoreApiInterface {
     // /carts?userId=1
     // GET
     // /products?limit=5
-
+// TODO
 
 }
