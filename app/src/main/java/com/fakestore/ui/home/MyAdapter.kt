@@ -23,7 +23,7 @@ class MyAdapter(private val items: List<String>) : RecyclerView.Adapter<MyAdapte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items[position]
         Log.d("textVew", holder.textView.toString())
-//        holder.textView.text = "qqq"
+
     }
 
     override fun getItemCount(): Int = items.size
