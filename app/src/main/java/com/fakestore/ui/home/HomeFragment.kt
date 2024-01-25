@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.lifecycle.lifecycleScope
 import com.fakestore.data.remote.CategoriesUseCaseImpl
 import com.fakestore.data.remote.ProductUseCaseImpl
@@ -63,5 +64,16 @@ class HomeFragment : Fragment() {
         homeViewModel.homeString.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        // Данные для адаптера
+        val items = listOf("Пункт 1", "Пункт 2", "Пункт 3")
+
+        // Инициализация RecyclerView
+//        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        val recyclerView = binding.recyclerView
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter = MyAdapter(items)
+
+
     }
 }
