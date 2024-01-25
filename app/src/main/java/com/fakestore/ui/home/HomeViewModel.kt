@@ -15,6 +15,7 @@ class HomeViewModel : ViewModel() {
             homeString.postValue(getNotifications())
 
             // дернуть юзкейс
+            //
         }
     }
 
